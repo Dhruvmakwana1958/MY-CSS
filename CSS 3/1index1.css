@@ -1,0 +1,20 @@
+#box1{
+    height: 300px ;
+    width: 400px ;
+    background-color: burlywood ; 
+    font-size: 10px;
+    height: 50vh;
+    
+}
+#box2{
+    width: 50% ;
+    height: 70% ;
+    background-color: darkolivegreen ;
+    margin-left: 10% ;
+    font-size: 2em; /* 2 times of parent*/
+    width: 5em; /* font-size(*)5 mtlb
+    box1 font-size = 10px
+    box2 font-size = 2em --> 2*10 = 20px
+    box2 width = 5em --> 5*20 = 100px
+    */
+}

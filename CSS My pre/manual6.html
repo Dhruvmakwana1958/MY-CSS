@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Event Handling</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background-color: #f0f8ff; }
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      margin-bottom: 20px;
+      border: 2px solid #000;
+    }
+    input, select {
+      padding: 8px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h3>Mouse Events</h3>
+<div id="box"
+     onclick="log('Clicked!')"
+     onmouseover="log('Mouse Over!')"
+     onmouseout="log('Mouse Out!')"
+     onmousedown="log('Mouse Down!')"
+     onmouseup="log('Mouse Up!')"
+     onmousemove="log('Mouse Move!')">
+  Hover and Click me
+</div>
+
+<h3>Keyboard Event</h3>
+<input type="text" placeholder="Type here"
+       onkeydown="log('Key Down!')"
+       onkeyup="log('Key Up!')">
+
+<h3>Form Events</h3>
+<form onsubmit="handleSubmit(event)">
+  <input type="text" placeholder="Focus here" onfocus="log('Focused!')" onblur="log('Blurred!')">
+  <br>
+  <select onchange="log('Changed!')">
+    <option value="">Select</option>
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Event Log:</h3>
+<div id="log" style="white-space: pre-wrap; background: #fff; padding: 10px; border: 1px solid #ccc;"></div>
+
+<script>
+  function log(message) {
+    document.getElementById("log").innerText += message + "\n";
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent actual form submit
+    log("Form Submitted!");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 125px;
+            width : 125px;
+            border: 4px groove royalblue;
+            margin: 20px;
+            display: inline-block;
+            background-color:darkseagreen;
+        }
+        #box1:active{
+            transition-property: font-size ; /*tra-pro: font-size karva thi 3s nu duretion fakt ne fakt font-size ma j avshe backgrond color click 
+            karta ni sathe j badalai jase
+            but jo all rakhyu hot to font-size ni sathe sathe bkg clr badlva ma pan 3 sec lagse*/ 
+            transition-duration: 3s;
+            background-color: darkolivegreen;
+            font-size: 25px;
+            color: red;
+        }
+        #box2:hover{
+            transition-property: all;
+            transition-duration: 4s;
+            transition-delay: 1s;
+            text-transform:uppercase;
+            transition-timing-function: ease-in;
+            color: chocolate;
+            background-color:steelblue;
+            /*Shorthand
+            transition: all 4s ease-in 2s;
+            */
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">Dhruv</div>
+    <div id="box2">pankaj</div>
+    
+</body>
+</html>

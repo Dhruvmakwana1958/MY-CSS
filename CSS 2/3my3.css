@@ -1,0 +1,44 @@
+#diiiv{
+    display: inline; 
+    background-color: pink;
+}
+button{
+    display: block;
+    background-color: aquamarine;
+
+}
+#d1 {
+    height: 100px;
+    width: 100px; 
+    background-color: red;
+    margin: 25px;
+    padding: 25px; 
+    display: inline; /*inline aapva thi je te tag inline to bani jase but teni margin set karva jasu to te ny thy*/
+}
+#d2 {
+    height: 100px;
+    width: 100px; 
+    background-color: green;
+    margin: 25px;
+    padding: 25px;
+    display: inline-block;
+    display: none;
+}
+#d4 {
+    height: 100px;
+    width: 100px; 
+    background-color: saddlebrown;
+    margin: 25px;
+    padding: 25px;
+    display: inline-block;
+    visibility: hidden;
+}
+#d3 {
+    height: 100px;
+    width: 100px; 
+    background-color: blue;
+    margin: 25px;
+    padding: 25px;
+    display: inline-block;
+    
+}

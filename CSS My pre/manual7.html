@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Short Form Validation</title>
+  <style>
+    body { font-family: Arial; padding: 30px; background: #f2f2f2; }
+    form { background: #fff; padding: 20px; max-width: 400px; box-shadow: 0 0 5px #ccc; }
+    input, select { width: 100%; padding: 8px; margin-top: 10px; }
+    .error { color: red; font-size: 13px; }
+    button { margin-top: 15px; padding: 10px; width: 100%; background: green; color: white; border: none; }
+  </style>
+</head>
+<body>
+
+<h3>Form with Validation</h3>
+
+<form onsubmit="return validateForm()">
+  <input type="text" id="name" placeholder="Full Name (A-Z only)">
+  <div class="error" id="nameErr"></div>
+
+  <input type="text" id="email" placeholder="Email">
+  <div class="error" id="emailErr"></div>
+
+  <input type="text" id="age" placeholder="Age (digits only)">
+  <div class="error" id="ageErr"></div>
+
+  <select id="gender">
+    <option value="">Select Gender</option>
+    <option>Male</option><option>Female</option><option>Other</option>
+  </select>
+  <div class="error" id="genderErr"></div>
+
+  <input type="date" id="dob">
+  <div class="error" id="dobErr"></div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  // Block non-letter input
+  name.addEventListener("keypress", e => /[a-zA-Z ]/.test(e.key) || e.preventDefault());
+  age.addEventListener("keypress", e => /\d/.test(e.key) || e.preventDefault());
+
+  function validateForm() {
+    let valid = true;
+    const show = (id, msg) => (document.getElementById(id).innerText = msg, valid = false);
+
+    // Reset errors
+    ["nameErr", "emailErr", "ageErr", "genderErr", "dobErr"].forEach(id => document.getElementById(id).innerText = "");
+
+    if (!/^[A-Za-z ]+$/.test(name.value.trim())) show("nameErr", "Only letters allowed.");
+    if (!/^[^ ]+@[^ ]+\.[a-z]{2,}$/.test(email.value.trim())) show("emailErr", "Invalid email.");
+    if (!/^\d+$/.test(age.value.trim())) show("ageErr", "Only numbers allowed.");
+    if (!gender.value) show("genderErr", "Select gender.");
+    if (!dob.value) show("dobErr", "Select date.");
+
+    return valid;
+  }
+</script>
+
+</body>
+</html>
