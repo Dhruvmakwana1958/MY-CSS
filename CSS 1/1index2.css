@@ -13,7 +13,7 @@ a {
 }
 #h1 {
     font-weight:900;
-    text-decoration: underline wavy;
+    text-decoration: blueviolet underline wavy;
     text-underline-offset: 80px; 
     
 }
