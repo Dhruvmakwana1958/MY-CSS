@@ -9,6 +9,9 @@ div{
     transition-duration: 3s;
     transition-timing-function: steps(4);
 
+    /* usecase :- koi pan elements ma timing sathe change lava mate like square ne hover karta circle bane che pan aa effect ak dam blink sathe 
+    thy jay che but apdee joi che square ma thi circle bnva mate je ferfar thy che te dhime dhime thy */
+
     /*nicheni banne property main div ma lagava thi badha j div ma change avse*/
     /**** transition-property: all;
           transition-duration: 3s; ****/
