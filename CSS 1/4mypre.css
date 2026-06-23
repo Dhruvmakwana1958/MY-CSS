@@ -1,3 +1,22 @@
+/* css me kitne types ke selectors aate hai? 
+1. Universal Selector *    2. Element / Type Selector    3. Class Selector .     4. ID Selector #
+
+5. Grouping Selector 
+,h1,p,div{
+ color:blue;
+}
+ 
+6. Descendant Selector (space)    7. Child Selector >    8. Adjacent Sibling Selector +     9. General Sibling Selector ~  
+10. Attribute Selector [] 
+
+11. Pseudo Class Selector :     12. Pseudo Element Selector ::
+
+Basic → *  element  .class  #id
+Relation → space  >  +  ~ ,
+Special → []  :  ::*/
+
+
+
 /* Descendant Selectors */
 nav ul li a {
     background-color: fuchsia;

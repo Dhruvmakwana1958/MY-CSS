@@ -19,6 +19,7 @@
     position: absolute;
     left: 16px;
     line-height: 60px;
+    transition: all 5ms ease-in-out 0.02ms;
     /* cursor: pointer; ahi apde cursor pointer apyu che pan te work nathi kartu karan ke te sidebar_menu niche jatu ryu che  */
     
 }
@@ -29,25 +30,28 @@
     position: absolute;
     left: 275px;
     line-height: 60px;
-    /* opacity: 0; */
+    opacity: 0;
     cursor: pointer;
+    transition: font-size 0.1s ease-in 0ms;
 }
 
 .sidebar_menu{
     position: fixed;
     height: 100vh;
     width: 300px;
-    /* left: -300px; */ /*-300 no mtlb left thi haju vadhu left , ane jo left 300 apyu hot to right side jat ahi -300 apyu che to left thi
+    left: -300px; /*-300 no mtlb left thi haju vadhu left , ane jo left 300 apyu hot to right side jat ahi -300 apyu che to left thi
     haji vadhu left jase*/
     background-color: rgba(255, 255, 255,0.08) ;
     box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear 0s;
 }
 
 .sidebar_menu .logo{
     position: absolute;
-    width: 100%;
+    width: 99%;
     box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5);
     line-height: 60px;
+    height: 60px;
 }
 
 .sidebar_menu .logo a{
@@ -56,7 +60,6 @@
     left: 50px;
     color: white;
     text-decoration: none;
-    
 }
 
 .sidebar_menu .menu{
@@ -64,12 +67,14 @@
     width: 86%;
     position: absolute;
     top: 80px;
+    
 }
 
 .sidebar_menu .menu li{
     margin-top: 6px;
     padding: 12px 20px;
     width: 100%;
+    
     
 }
 
@@ -122,3 +127,150 @@
     transform: scale(1.2);
     
 }
+#check:checked ~ .sidebar_menu{
+    left: 0;
+}
+
+#check:checked ~ .btn_one  i{
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two  i{
+    opacity: 1;
+}
+/* muje + vala sibling cobinator , > vala child combinattro aur ~ vala combinator sabka diffrence batau aur bato ki konsa vala kab use karna hai
+CSS me ye tino combinators ka kaam elements ke relation ko select karna hota hai. Difference relation kha hai.
+
+1. > → Child Combinator (sirf direct child)
+
+Ye sirf direct child select karta hai.
+
+HTML
+<div class="parent">
+    <p>Para 1</p>
+
+    <div>
+        <p>Para 2</p>
+    </div>
+</div>
+CSS
+.parent > p{
+   color:red;
+}
+Result:
+
+✅ Para 1 red
+❌ Para 2 red nahi hoga
+
+Kyuki Para 2 direct child nahi hai.
+
+Structure:
+
+parent
+├── p ✅
+└── div
+    └── p ❌
+Kab use kare?
+
+Jab tumko sirf ek level niche wale element target karne ho.
+
+Example:
+
+nav > a
+.card > img
+2. + → Adjacent Sibling Combinator (next wala sibling)
+
+Ye sirf turant next sibling select karta hai.
+
+HTML
+<h2>Title</h2>
+
+<p>Para 1</p>
+
+<p>Para 2</p>
+CSS
+h2 + p{
+   color:blue;
+}
+Result:
+
+✅ Para 1 blue
+❌ Para 2 normal
+
+Kyuki Para 1 h2 ke immediately baad hai.
+
+Structure:
+
+h2
+↓
+p ✅
+p ❌
+Kab use kare?
+
+Jab tumko ek element ke just baad wale element ko style karna ho.
+
+Example:
+
+input + label
+h1 + p
+3. ~ → General Sibling Combinator (baad ke sab siblings)
+
+Ye same parent ke andar baad me aane wale sab matching siblings select karta hai.
+
+HTML
+<input>
+
+<p>One</p>
+<p>Two</p>
+<p>Three</p>
+CSS
+input ~ p{
+   color:green;
+}
+Result:
+
+✅ One green
+✅ Two green
+✅ Three green
+
+Structure:
+
+input
+↓
+p ✅
+p ✅
+p ✅
+Kab use kare?
+
+Jab ek element ke baad aane wale multiple siblings par effect chahiye.
+
+Tumhare sidebar me:
+
+#check:checked ~ .sidebar_menu{
+   left:0;
+}
+
+Checkbox check → sidebar move.
+
+Quick Difference Table
+Symbol	Name	Select karta hai
+>	Child	Sirf direct child
++	Adjacent sibling	Sirf next sibling
+~	General sibling	Baad ke sab siblings
+
+Example:
+
+parent
+├── A
+├── B
+├── C
+└── D
+A + B   → B
+A ~ C   → C,D
+parent > A → A
+
+Ye yaad rakhna:
+
+> → andar
++ → next
+~ → next aur uske baad sab */
